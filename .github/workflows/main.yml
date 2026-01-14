@@ -9,7 +9,7 @@ jobs:
         uses: Niklas05/buildozer-action@v1
         with:
           command: buildozer android debug
-      - name: APK_Dosyasini_Yukle
+      - name: APK_Yukle
         uses: actions/upload-artifact@v4
         with:
           name: Uygulamaniz
