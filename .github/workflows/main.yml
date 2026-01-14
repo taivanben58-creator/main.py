@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Buildozer_Aksiyonu
-        uses: Niklas05/buildozer-action@v1
+        uses: Niklas05/buildozer-action@master
         with:
           command: buildozer android debug
       - name: APK_Yukle
