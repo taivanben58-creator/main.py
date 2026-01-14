@@ -1,26 +1,17 @@
-name: Build APk
+name: APK_Uretici
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - name: Buildozer_Aksiyonu
+        uses: Niklas05/buildozer-action@v1
         with:
-          python-version: '3.10'
-      - name: Install Buildozer dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential git ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev
-      - name: Build with Buildozer
-        uses: ArtemSerebrennikov/buildozer-action@v1
-        with:
-          buildozer_version: master
           command: buildozer android debug
-      - name: Upload APK
-        uses: actions/upload-artifact@v3
+      - name: APK_Dosyasini_Yukle
+        uses: actions/upload-artifact@v4
         with:
-          name: my-apk
+          name: Uygulamaniz
           path: bin/*.apk
           
